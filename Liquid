@@ -1,0 +1,61 @@
+<ul class="tabs">
+    <li class="tab active" data-content-id="tab-content-1">Description</li>
+  {% if section.settings.text-section != blank %}
+    <li class="tab" data-content-id="tab-content-2">{{section.settings.text-section}}</li>
+  {% endif %}
+  {% if section.settings.text-section-2 != blank %}
+    <li class="tab" data-content-id="tab-content-3">{{section.settings.text-section-2}}</li>
+  {% endif %}
+  {% if section.settings.text-section-3 != blank %}
+    <li class="tab" data-content-id="tab-content-3">{{section.settings.text-section-3}}</li>
+  {% endif %}
+</ul>
+
+
+<div id="tab-content-1" class="tab-content active">{{product.description}}</div>
+<div id="tab-content-2" class="tab-content">{{section.settings.text-body-section}}</div>
+<div id="tab-content-3" class="tab-content">{{section.settings.text-body-section-2}}</div>
+<div id="tab-content-3" class="tab-content">{{section.settings.text-body-section-3}}</div>
+
+
+{% schema %}
+    
+        {
+            "name": "Custom Tabs",
+            "settings": [
+              {
+                "id": "text-section",
+                "type": "text",
+                "label": "Tab Title - 1"
+              },
+              {
+                "id": "text-body-section",
+                "type": "richtext",
+                "label": "Tab Content-1"
+              },
+              {
+                "id": "text-section-2",
+                "type": "text",
+                "label": "Tab Title - 2"
+              },
+              {
+                "id": "text-body-section-2",
+                "type": "richtext",
+                "label": "Tab Content-2"
+              },
+              {
+                "id": "text-section-3",
+                "type": "text",
+                "label": "Tab Title - 3"
+              },
+              {
+                "id": "text-body-section-3",
+                "type": "richtext",
+                "label": "Tab Content-3"
+              }
+            
+            
+            ]
+        }
+
+{% endschema %}
